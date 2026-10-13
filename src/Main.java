@@ -1,16 +1,23 @@
 import java.util.Scanner;
+
 public class Main {
-    public static void main() {
+    public static void main(String[] args) {
+        // Se crea la instancia real de Scanner para leer la consola
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Hello World");
+        double resultado = pedirYSumar(scanner);
+        System.out.println("resultado: " + resultado);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introuce el primer numero: ");
-        int num1 = sc.nextInt();
-        System.out.println("Introuce el segundo numero: ");
-        int num2 = sc.nextInt();
-        int resultado = num1 - num2;
-        System.out.println("El resultado de la resta es " + resultado);
-        sc.close();
+        scanner.close(); // Buena práctica para liberar recursos
+    }
+
+    public static double pedirYSumar(Scanner scanner) {
+        System.out.print("Introduce el primer número: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Introduce el segundo número: ");
+        double b = scanner.nextDouble();
+
+        return a + b;
     }
 }
